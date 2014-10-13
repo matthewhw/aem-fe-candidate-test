@@ -7,6 +7,6 @@ The component should be similar to the one shown in [example.png](example.png) t
 
 * The component must be responsive
 * The html should be able to be reused to display the component in various layouts using only css.
-* Ideally the css should be wrote using scss 
+* The css should be wrote using [scss](http://sass-lang.com/) 
 
 To return the completed test fork this repository and push your code to it.
