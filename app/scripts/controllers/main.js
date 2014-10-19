@@ -17,4 +17,10 @@ angular.module('reviewModule')
         $scope.reviews = data.reviewList.reviewArticles;
       });
 
+    $scope.styles = [
+       {name: 'default', title: 'Default'},
+       {name: 'dark', title: 'Darken'},
+       {name: 'flat', title: 'Flatten'},
+    ];
+
   });

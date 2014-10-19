@@ -1,3 +1,4 @@
+//variables
 $font-stack-1: Georgia, serif;
 $font-stack-2: Arial, Helvetica, sans-serif;
 $font-size: 20px;
@@ -10,9 +11,19 @@ $break-desktop: 980px;
 $break-tablet: 768px;
 $break-mobile: 480px;
 
+//fixed style switcher utility
+.style-switch {
+  font-family: $font-stack-2;
+  font-size: $font-size * .6;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+//base styling
 .container {
   width: auto;
-  margin: 0 10px;
+  margin: 70px 10px 0;
   font: 100% $font-stack-1;
   h1 {
     font-size: $font-size;
@@ -94,13 +105,72 @@ $break-mobile: 480px;
   }
 }
 
+.header {
+  width: 100%;
+  height: 60px;
+  line-height: 32px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fefefe;
+  font-family: $font-stack-2;
+  border-bottom: 1px solid #eee;
+  h1 {
+    font-weight: normal;
+    color: #444;
+    letter-spacing: 1px;
+    padding-left: 20px;
+  }
+}
+
 .footer {
+  font-family: $font-stack-2;
   font-size: 14px;
   color: $color-2;
 }
+
+//additional styles, name to match MainCtrl $scope.styles
+.dark {
+  background: #555;
+  padding: 0 10px;
+  .reviews h2 a, .reviews h2 a:hover, .reviews p {
+    color: #efefef;
+  }
+  .reviews li {
+    border-top: 1px solid #efefef;
+  }
+  .reviews li:first-child {
+    border: none;
+  }
+}
+
+.flat {
+  font-family: $font-stack-2;
+  padding: 0 10px;
+  letter-spacing: .4px;
+  .reviews {
+    li {
+      border: none;
+      overflow: hidden;
+      padding: 8px 18px;
+    }
+    li.even {
+      background: lighten($color-1, 65%);
+    }
+    h2 a {
+      font-weight: bold;
+    }
+    h2 a:hover {
+      color: lighten($color-1, 20%);
+      border: none;
+    }
+  }
+}
+
+//responsive changes
 @media only screen and (min-width: $break-tablet) { 
   .container {
-    margin: 0 auto;
+    margin: 70px auto 0;
     width: 740px;
     h1 {
       font-size: $font-size * 1.2;
@@ -124,3 +194,4 @@ $break-mobile: 480px;
     width: 960px;
   }
 }
+
