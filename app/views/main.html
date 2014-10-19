@@ -1,12 +1,14 @@
 <div class="row">
   <ul class="reviews">
     <li ng-repeat="review in reviews">
-      <h2 ng-bind-html="review.reviewTitle"></h2>
-      <img ng-if="review.reviewImage" ng-src="{{ imagePath + review.reviewImage }}">
-      <p ng-bind-html="review.reviewAuthor"></p>
-      <p ng-bind-html="review.reviewSummary"></p>
-      <a href="{{ filmLink + review.reviewLink }}">Film link</a>
-      <span>{{ review.reviewRating }} out of 5</span>
+      <h2><a ng-bind-html="review.reviewTitle" href="{{ filmLink + review.reviewLink }}"></a></h2>
+      <img class="thumb" ng-if="review.reviewImage" ng-src="{{ imagePath + review.reviewImage }}">
+      <p class="author" ng-bind-html="review.reviewAuthor"></p>
+      <p class="summary" ng-bind-html="review.reviewSummary"></p>
+      <span class="rating {{ 'star-' + review.reviewRating }}">
+        <img src="images/star_1.png">
+        <span class="reveal"><img src="images/star_5.png"></span>
+      </span>
     </li>
   </ul>
 </div>

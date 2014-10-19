@@ -1,0 +1,126 @@
+$font-stack-1: Georgia, serif;
+$font-stack-2: Arial, Helvetica, sans-serif;
+$font-size: 20px;
+
+$color-1: #234B7B;
+$color-2: #333;
+$color-3: #C70C04;
+
+$break-desktop: 980px;
+$break-tablet: 768px;
+$break-mobile: 480px;
+
+.container {
+  width: auto;
+  margin: 0 10px;
+  font: 100% $font-stack-1;
+  h1 {
+    font-size: $font-size;
+    color: $color-2;
+  }
+}
+
+.reviews {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    border-top: 1px dotted #ccc;
+    padding-bottom: 10px;
+    clear: both;
+    img {
+      float: left;
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+    img.thumb {
+      display: none;
+    }
+  }
+  p {
+    font-family: $font-stack-2;
+    font-size: $font-size * .6;
+    margin: 0 0 5px;
+  }
+  p.author {
+    color: $color-3;
+    font-weight: bold;
+  }
+  h2 {
+    margin: 2px 0 8px;
+    a {
+      color: $color-1;
+      text-decoration: none;
+      font-size: $font-size * .75;
+      font-weight: normal;
+    }
+    a:hover {
+      color: $color-2;
+      border-bottom: 1px dotted;
+    }
+  }
+  .rating {
+    display: inline-block;
+    position: relative;
+    height: 11px;
+    width: 58px;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .reveal {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      height: 11px;
+      position: relative;
+    }
+    &.star-1 .reveal {
+      width: 20%;
+    }
+    &.star-2 .reveal {
+      width: 40%;
+    }
+    &.star-3 .reveal {
+      width: 60%;
+    }
+    &.star-4 .reveal {
+      width: 80%;
+    }
+    &.star-5 .reveal {
+      width: 100%;
+    }
+  }
+}
+
+.footer {
+  font-size: 14px;
+  color: $color-2;
+}
+@media only screen and (min-width: $break-tablet) { 
+  .container {
+    margin: 0 auto;
+    width: 740px;
+    h1 {
+      font-size: $font-size * 1.2;
+    }
+  }
+  .reviews {
+    h2 a {
+      font-size: $font-size * .9;
+    }
+    p {
+      font-size: $font-size * .7;
+    }
+    li img.thumb {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: $break-desktop) { 
+  .container {
+    width: 960px;
+  }
+}
