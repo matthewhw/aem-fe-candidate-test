@@ -1,0 +1,12 @@
+<div class="row">
+  <ul class="reviews">
+    <li ng-repeat="review in reviews">
+      <h2 ng-bind-html="review.reviewTitle"></h2>
+      <img ng-if="review.reviewImage" ng-src="{{ imagePath + review.reviewImage }}">
+      <p ng-bind-html="review.reviewAuthor"></p>
+      <p ng-bind-html="review.reviewSummary"></p>
+      <a href="{{ filmLink + review.reviewLink }}">Film link</a>
+      <span>{{ review.reviewRating }} out of 5</span>
+    </li>
+  </ul>
+</div>
